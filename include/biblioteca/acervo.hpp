@@ -9,8 +9,10 @@ namespace biblioteca {
 
 // O acervo é FEITO COM um vector, não É um vector. A herança privada (escrita
 // explicitamente) impede que o acervo seja usado como vector qualquer: quem
-// está de fora não pode inserir no meio, apagar, trocar ou esvaziar a estante.
-// Itens só entram pelo +=, e o acervo é o único dono de cada um.
+// está de fora não pode inserir no meio, apagar ou esvaziar a estante. A
+// entrada prevista é o +=, e o acervo é o único dono de cada item.
+// Limite conhecido: begin/end não-const dão acesso ao unique_ptr, o que ainda
+// permitiria trocar ou anular um item (ver DECISAO.md, pergunta 2).
 class Acervo final : private std::vector<std::unique_ptr<ItemAcervo>> {
   using Estante = std::vector<std::unique_ptr<ItemAcervo>>;
 
