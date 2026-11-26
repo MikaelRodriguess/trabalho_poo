@@ -16,7 +16,8 @@ add_library(biblioteca_core
     src/item_acervo.cpp
     src/livro.cpp
     src/revista.cpp
-    src/dvd.cpp)
+    src/dvd.cpp
+    src/acervo.cpp)
 target_include_directories(biblioteca_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_options(biblioteca_core PRIVATE ${PORTAO_DE_AVISOS})
 
