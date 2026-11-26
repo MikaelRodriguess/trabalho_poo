@@ -13,7 +13,10 @@ set(PORTAO_DE_AVISOS
 
 # As classes do domínio: uma biblioteca que não conhece std::cout.
 add_library(biblioteca_core
-    src/item_acervo.cpp)
+    src/item_acervo.cpp
+    src/livro.cpp
+    src/revista.cpp
+    src/dvd.cpp)
 target_include_directories(biblioteca_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_options(biblioteca_core PRIVATE ${PORTAO_DE_AVISOS})
 
