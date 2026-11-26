@@ -1,0 +1,5 @@
+# pasta de compilação: gerada pelo CMake, nunca versionada (R1)
+build/
+
+# material de apoio local (enunciado e código da Unidade I)
+referencia/
