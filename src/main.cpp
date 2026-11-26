@@ -40,13 +40,15 @@ int main() {
     acervo += std::make_unique<Revista>("Revista Piaui", 2024, 218);
     acervo += std::make_unique<Dvd>("Central do Brasil", 1998, 113);
 
-    // Percorrido por referência const à base: ficha() chama as virtuais de
-    // cada tipo, sem perguntar qual é o tipo de ninguém.
+    // Percorrido por referência const ao acervo e por ponteiro da base:
+    // ficha() chama as virtuais de cada tipo, sem perguntar o tipo de ninguém.
     const Acervo& consulta = acervo;
     for (const std::unique_ptr<ItemAcervo>& item : consulta) {
       std::cout << "  " << item->ficha() << "\n";
     }
-    for (const auto& item : acervo) {
+    // Ainda pela referência const: o unique_ptr fica protegido, mas o item
+    // apontado continua mutável, e é ele que se empresta.
+    for (const auto& item : consulta) {
       item->emprestar();
     }
     std::cout << "  -- depois de emprestar todos --\n";
