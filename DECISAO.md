@@ -23,7 +23,7 @@ O `Acervo` é o único dono dos itens, e isso está no tipo: `vector<unique_ptr<
 
 **Assistente:** Claude Code (Claude Opus 5.5).
 
-**Para quê:** eu defini o tema, as classes e o papel de cada uma no desenho. A partir disso, o assistente escreveu o código (classes, `contrato.hpp`, `main.cpp`, CMake e Makefile), o README e um rascunho destas respostas, que eu revisei. Os commits foram feitos por etapa, rodando `make verifica` a cada uma.
+**Para quê:** eu defini o tema, as classes e o papel de cada uma no desenho. A partir disso, o assistente me ajudou a escrever o código (classes, `contrato.hpp`, `main.cpp`, CMake e Makefile), o README que eu revisei e um rascunho das respostas. Os commits foram feitos por etapa, rodando `make verifica` a cada uma.
 
 **O que ele errou:**
 - Escreveu que o `contrato.hpp` tinha 19 `static_assert`; são 17.
